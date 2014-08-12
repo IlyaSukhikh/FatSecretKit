@@ -39,7 +39,7 @@
 		5F06C7CE16670CBC0064C526 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F06C7C116670CBC0064C526 /* OAuthCore.m */; };
 		5F06C7CF16670CBC0064C526 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F06C7C116670CBC0064C526 /* OAuthCore.m */; };
 		98340461D5944C3985E4CE1B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4E36A2EE74229B5D895FA /* libPods.a */; };
-		B1685F37199A200D0072D61D /* FSRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B1685F36199A200D0072D61D /* FSRecipe.m */; };
+		B108455D199A2772003A57F7 /* FSRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B108455C199A2772003A57F7 /* FSRecipe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,8 +91,8 @@
 		5F06C7BF16670CBC0064C526 /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "OAuth+Additions.m"; path = "FatSecret/OAuth+Additions.m"; sourceTree = "<group>"; };
 		5F06C7C016670CBC0064C526 /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthCore.h; path = FatSecret/OAuthCore.h; sourceTree = "<group>"; };
 		5F06C7C116670CBC0064C526 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthCore.m; path = FatSecret/OAuthCore.m; sourceTree = "<group>"; };
-		B1685F35199A200D0072D61D /* FSRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRecipe.h; sourceTree = "<group>"; };
-		B1685F36199A200D0072D61D /* FSRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRecipe.m; sourceTree = "<group>"; };
+		B108455B199A2772003A57F7 /* FSRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSRecipe.h; path = FatSecret/FSRecipe.h; sourceTree = "<group>"; };
+		B108455C199A2772003A57F7 /* FSRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSRecipe.m; path = FatSecret/FSRecipe.m; sourceTree = "<group>"; };
 		E8A4E36A2EE74229B5D895FA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,8 +208,8 @@
 				5F06C7B516670CBC0064C526 /* FSClient.m */,
 				5F06C7B616670CBC0064C526 /* FSFood.h */,
 				5F06C7B716670CBC0064C526 /* FSFood.m */,
-				B1685F35199A200D0072D61D /* FSRecipe.h */,
-				B1685F36199A200D0072D61D /* FSRecipe.m */,
+				B108455B199A2772003A57F7 /* FSRecipe.h */,
+				B108455C199A2772003A57F7 /* FSRecipe.m */,
 				5F06C7B816670CBC0064C526 /* FSServing.h */,
 				5F06C7B916670CBC0064C526 /* FSServing.m */,
 				5F06C7BA16670CBC0064C526 /* NSData+Base64.h */,
@@ -351,8 +351,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1685F37199A200D0072D61D /* FSRecipe.m in Sources */,
 				5F06C78216670BAE0064C526 /* main.m in Sources */,
+				B108455D199A2772003A57F7 /* FSRecipe.m in Sources */,
 				5F06C78616670BAE0064C526 /* FSAppDelegate.m in Sources */,
 				5F06C79516670BAE0064C526 /* FSViewController.m in Sources */,
 				5F06C7C216670CBC0064C526 /* FSClient.m in Sources */,
