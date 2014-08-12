@@ -11,6 +11,7 @@
 #import "OAuthCore.h"
 #import <SVHTTPRequest/SVHTTPRequest.h>
 #import "FSFood.h"
+#import "FSRecipe.h"
 
 #define FAT_SECRET_API_ENDPOINT @"http://platform.fatsecret.com/rest/server.api"
 
@@ -71,6 +72,48 @@
                          completionBlock([FSFood foodWithJSON:[data objectForKey:@"food"]]);
                      }];
 }
+
+- (void)searchRecipes:(NSString *)recipeText
+           recipeType:(NSString *)recipeType
+           pageNumber:(NSInteger)pageNumber
+           maxResults:(NSInteger)maxResults
+           completion:(FSRecipeSearchBlock)completionBlock {
+    
+    NSMutableDictionary *params = [@{
+                                     @"search_expression" : recipeText,
+                                     @"recipe_type"       : recipeType,
+                                     @"page_number"       : @(pageNumber),
+                                     @"max_results"       : @(maxResults)
+                                     } mutableCopy];
+    
+    [self makeRequestWithMethod:@"recipes.search" parameters:params completion:^(NSDictionary *response) {
+        NSMutableArray *recipes = [@[] mutableCopy];
+        
+        id responseRecipes = [response objectForKey:@"recipes"];
+        
+        // Hack because the API sends JSON objects, instead of arrays, when there is only
+        // one result. (WTF?)
+        if ([[responseRecipes objectForKey:@"recipe"] respondsToSelector:@selector(arrayByAddingObject:)]) {
+            for (NSDictionary *recipe in [responseRecipes objectForKey:@"recipe"]) {
+                [recipes addObject:[FSRecipe recipeWithJSON:recipe]];
+            }
+        } else {
+            if ([[responseRecipes objectForKey:@"recipe"] count] == 0) {
+                recipes = [@[] mutableCopy];
+            } else {
+                recipes = [@[ [FSRecipe recipeWithJSON:[responseRecipes objectForKey:@"recipe"]] ] mutableCopy];
+            }
+        }
+        
+        NSString *recipeType   = [[response objectForKey:@"recipes"] objectForKey:@"recipe_type"];
+        NSInteger maxResults   = [[[response objectForKey:@"recipes"] objectForKey:@"max_results"]   integerValue];
+        NSInteger totalResults = [[[response objectForKey:@"recipes"] objectForKey:@"total_results"] integerValue];
+        NSInteger pageNumber   = [[[response objectForKey:@"recipes"] objectForKey:@"page_number"]   integerValue];
+        
+        completionBlock(recipes, recipeType, maxResults, totalResults, pageNumber);
+    }];
+}
+
 
 - (void) makeRequestWithMethod:(NSString *)method
                     parameters:(NSDictionary *)params

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef void(^FSFoodSearchBlock)(NSArray *foods, NSInteger maxResults, NSInteger totalResults, NSInteger pageNumber);
-typedef void(^FSRecipeSearchBlock)(NSArray *recipes, NSString *recipeType, NSInteger maxResults, NSInteger totalResults);
+typedef void(^FSRecipeSearchBlock)(NSArray *recipes, NSString *recipeType, NSInteger maxResults, NSInteger totalResults, NSInteger pageNumber);
 
 @class FSFood;
 
