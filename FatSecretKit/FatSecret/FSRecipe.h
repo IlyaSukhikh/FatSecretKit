@@ -16,4 +16,6 @@
 @property (nonatomic, strong, readonly) NSString *imageUrl;
 @property (nonatomic, assign, readonly) NSInteger identifier;
 
++ (id) recipeWithJSON:(NSDictionary *)json;
+
 @end

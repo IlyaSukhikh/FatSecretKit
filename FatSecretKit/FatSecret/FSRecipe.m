@@ -23,7 +23,7 @@
     return self;
 }
 
-+ (id) foodWithJSON:(NSDictionary *)json {
++ (id) recipeWithJSON:(NSDictionary *)json {
     return [[self alloc] initWithJSON:json];
 }
 
