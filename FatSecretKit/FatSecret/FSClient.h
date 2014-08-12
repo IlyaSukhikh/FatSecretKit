@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef void(^FSFoodSearchBlock)(NSArray *foods, NSInteger maxResults, NSInteger totalResults, NSInteger pageNumber);
+typedef void(^FSRecipeSearchBlock)(NSArray *recipes, NSString *recipeType, NSInteger maxResults, NSInteger totalResults);
 
 @class FSFood;
 
@@ -26,6 +27,12 @@ typedef void(^FSFoodSearchBlock)(NSArray *foods, NSInteger maxResults, NSInteger
 - (void)searchFoods:(NSString *)foodText completion:(FSFoodSearchBlock)completionBlock;
 
 - (void)getFood:(NSInteger)foodId completion:(void (^)(FSFood *food))completionBlock;
+
+-(void)searchRecipes:(NSString *)recipeText
+          recipeType:(NSString *)recipeType
+          pageNumber:(NSInteger)pageNumber
+          maxResults:(NSInteger)maxResults
+          completion:(FSRecipeSearchBlock)completionBlock;
 
 + (FSClient *)sharedClient;
 
