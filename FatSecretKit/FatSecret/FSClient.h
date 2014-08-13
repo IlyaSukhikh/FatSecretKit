@@ -12,6 +12,7 @@ typedef void(^FSFoodSearchBlock)(NSArray *foods, NSInteger maxResults, NSInteger
 typedef void(^FSRecipeSearchBlock)(NSArray *recipes, NSString *recipeType, NSInteger maxResults, NSInteger totalResults, NSInteger pageNumber);
 
 @class FSFood;
+@class FSRecipe;
 
 @interface FSClient : NSObject
 
@@ -33,6 +34,8 @@ typedef void(^FSRecipeSearchBlock)(NSArray *recipes, NSString *recipeType, NSInt
           pageNumber:(NSInteger)pageNumber
           maxResults:(NSInteger)maxResults
           completion:(FSRecipeSearchBlock)completionBlock;
+
+-(void)getRecipe:(NSInteger)recipeId completion:(void (^)(FSRecipe *recipe))completionBlock;
 
 + (FSClient *)sharedClient;
 

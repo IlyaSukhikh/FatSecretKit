@@ -17,7 +17,7 @@
         _recipeDescription = [json objectForKey:@"recipe_description"];
         _url             = [json objectForKey:@"recipe_url"];
         _identifier      = [[json objectForKey:@"recipe_id"] integerValue];
-        _imageUrl       = [json objectForKey:@"recipe_image"];        
+        _imageUrl       = [json objectForKey:@"recipe_image"];
     }
     
     return self;

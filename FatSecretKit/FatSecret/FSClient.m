@@ -114,6 +114,16 @@
     }];
 }
 
+-(void)getRecipe:(NSInteger)recipeId completion:(void (^)(FSRecipe *recipe))completionBlock {
+    NSDictionary *params = @{@"recipe_id" : @(recipeId)};
+    
+    [self makeRequestWithMethod:@"recipe.get"
+                     parameters:params
+                     completion:^(NSDictionary *data) {
+                         completionBlock([FSRecipe recipeWithJSON:[data objectForKey:@"recipe"]]);
+                     }];
+}
+
 
 - (void) makeRequestWithMethod:(NSString *)method
                     parameters:(NSDictionary *)params

@@ -40,6 +40,7 @@
 		5F06C7CF16670CBC0064C526 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F06C7C116670CBC0064C526 /* OAuthCore.m */; };
 		98340461D5944C3985E4CE1B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4E36A2EE74229B5D895FA /* libPods.a */; };
 		B108455D199A2772003A57F7 /* FSRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B108455C199A2772003A57F7 /* FSRecipe.m */; };
+		B16D5B64199B6CD7003C6724 /* FSRecipeServings.m in Sources */ = {isa = PBXBuildFile; fileRef = B16D5B63199B6CD7003C6724 /* FSRecipeServings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		5F06C7C116670CBC0064C526 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OAuthCore.m; path = FatSecret/OAuthCore.m; sourceTree = "<group>"; };
 		B108455B199A2772003A57F7 /* FSRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSRecipe.h; path = FatSecret/FSRecipe.h; sourceTree = "<group>"; };
 		B108455C199A2772003A57F7 /* FSRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSRecipe.m; path = FatSecret/FSRecipe.m; sourceTree = "<group>"; };
+		B16D5B62199B6CD7003C6724 /* FSRecipeServings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSRecipeServings.h; path = FatSecret/FSRecipeServings.h; sourceTree = "<group>"; };
+		B16D5B63199B6CD7003C6724 /* FSRecipeServings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSRecipeServings.m; path = FatSecret/FSRecipeServings.m; sourceTree = "<group>"; };
 		E8A4E36A2EE74229B5D895FA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -212,6 +215,8 @@
 				B108455C199A2772003A57F7 /* FSRecipe.m */,
 				5F06C7B816670CBC0064C526 /* FSServing.h */,
 				5F06C7B916670CBC0064C526 /* FSServing.m */,
+				B16D5B62199B6CD7003C6724 /* FSRecipeServings.h */,
+				B16D5B63199B6CD7003C6724 /* FSRecipeServings.m */,
 				5F06C7BA16670CBC0064C526 /* NSData+Base64.h */,
 				5F06C7BB16670CBC0064C526 /* NSData+Base64.m */,
 				5F06C7BC16670CBC0064C526 /* NSString+Camelize.h */,
@@ -359,6 +364,7 @@
 				5F06C7C416670CBC0064C526 /* FSFood.m in Sources */,
 				5F06C7C616670CBC0064C526 /* FSServing.m in Sources */,
 				5F06C7C816670CBC0064C526 /* NSData+Base64.m in Sources */,
+				B16D5B64199B6CD7003C6724 /* FSRecipeServings.m in Sources */,
 				5F06C7CA16670CBC0064C526 /* NSString+Camelize.m in Sources */,
 				5F06C7CC16670CBC0064C526 /* OAuth+Additions.m in Sources */,
 				5F06C7CE16670CBC0064C526 /* OAuthCore.m in Sources */,
