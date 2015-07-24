@@ -32,6 +32,14 @@
     [self makeRequestWithMethod:@"foods.search" parameters:params completion:^(NSDictionary *response) {
         NSMutableArray *foods = [@[] mutableCopy];
 
+        
+        //fix weird response with error in nsdata
+        if([response isKindOfClass:[NSData class]]){
+            NSString *str = [[NSString alloc] initWithData:(NSData *)response encoding:NSUTF8StringEncoding];
+            NSLog(@"Error: %@",str);
+            return completionBlock(@[], 0, 0, 0);
+        }
+        
         id responseFoods = [response objectForKey:@"foods"];
 
         // Hack because the API sends JSON objects, instead of arrays, when there is only
@@ -88,6 +96,15 @@
     
     [self makeRequestWithMethod:@"recipes.search" parameters:params completion:^(NSDictionary *response) {
         NSMutableArray *recipes = [@[] mutableCopy];
+        
+        
+        
+        //fix weird response with error in nsdata
+        if([response isKindOfClass:[NSData class]]){
+            NSString *str = [[NSString alloc] initWithData:(NSData *)response encoding:NSUTF8StringEncoding];
+            NSLog(@"Error: %@",str);
+            return completionBlock(@[],@"", 0, 0, 0);
+        }
         
         id responseRecipes = [response objectForKey:@"recipes"];
         
